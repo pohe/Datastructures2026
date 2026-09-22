@@ -31,8 +31,43 @@ Console.WriteLine();
 Console.WriteLine("Beregn summen af alle index positioner i myArray");
 
 int result=0; 
-for(int i =0; i < 3; i++)
+//for(int i =0; i < myArray.Length; i++)
+//{
+//    result = myArray[i] + result;
+//}
+foreach( int num in myArray  )
 {
-    result = myArray[i] + result;
+    result = num + result; 
 }
 Console.WriteLine(" Summen er " + result);
+
+//Console.WriteLine(myArray[3]);
+
+
+string[] names = new string[3];
+names[0] = "Oliver";
+names[1] = "Carl";
+names[2] = "Wiktor";
+
+foreach( string name in names)
+{
+    Console.WriteLine(name);
+}
+
+string searchName = "Ixping";
+bool testResult = false; 
+for(int i = 0; i<names.Length; i++)
+{
+    if (names[i] == searchName )
+    {
+        //Console.WriteLine($" {searchName} findes");
+        testResult = true; 
+        break;
+    }
+}
+if ( testResult )
+{
+    Console.WriteLine($" {searchName} findes");
+}
+else
+    Console.WriteLine($" {searchName} findes ikke");
