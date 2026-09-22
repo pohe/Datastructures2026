@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Hello, datastructures!");
+﻿using System.Diagnostics.Metrics;
+
+Console.WriteLine("Hello, datastructures!");
 
 //string n1 = "Oliver";
 //string n2 = "Carl";
@@ -81,9 +83,27 @@ myFirstList.Add(27);
 myFirstList.Insert(2, 45);
 myFirstList.Remove(15);
 myFirstList.RemoveAt(1);
+myFirstList[1] = 13;
 
+myFirstList.Add(97);
+
+
+Console.WriteLine(myFirstList[1]);
 foreach(int item in myFirstList)
 {
     Console.Write(item + " ");
 }
 Console.WriteLine();
+
+//int counter = 0;
+//foreach(int item in myFirstList)
+//{
+//    Console.WriteLine($"{counter} : {item}");
+//    counter++;
+
+//}
+
+for(int i = 0; i<myFirstList.Count; i++)
+{
+    Console.WriteLine($"{i} : {myFirstList[i]}");
+}
