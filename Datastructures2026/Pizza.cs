@@ -28,9 +28,16 @@ namespace Datastructures2026
         public double Price
         {
             get { return _price; }
-            set { _price = value; }
+            set
+            {   _price = value; }
         }
 
         public string Description { get; set; }
+
+        public override string ToString()
+        {
+            return $"No {_no} Name {_name} Description {Description} price {_price}"; 
+        }
+
     }
 }

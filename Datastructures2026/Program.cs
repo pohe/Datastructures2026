@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Metrics;
+﻿using Datastructures2026;
+using System.Diagnostics.Metrics;
 using System.Xml.Linq;
 
 Console.WriteLine("Hello, datastructures!");
@@ -144,3 +145,36 @@ foreach(string n in names)
 {
     Console.WriteLine(n);
 }
+
+List<Pizza> pizzas = new List<Pizza>();
+
+//Lav 3 pizza objekter
+Pizza p1 = new Pizza(1, "Magaritha", "Ost, Tomat", 90.5);
+Pizza p2 = new Pizza(2, "Americano", "Kødsauce, tomat, ost", 88.5);
+Pizza p3 = new Pizza(3, "Vegetarian", "Tomat, ost, rød peber, champingon", 74);
+
+//Læg dem ind i listen
+
+pizzas.Add(p1);
+pizzas.Add(p2);
+pizzas.Add(p3);
+
+//skriv dem alle ud
+
+foreach(Pizza aPizza in pizzas)
+{
+    Console.WriteLine(aPizza);
+}
+
+//find den samlede pris af alle pizzaer
+
+double sum = 0;  ; 
+foreach(Pizza item in pizzas)
+{
+    sum = sum + item.Price;
+}
+
+Console.WriteLine($"Summen af alle pizzaer er {sum}");
+
+
+
