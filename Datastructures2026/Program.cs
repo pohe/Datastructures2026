@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Metrics;
+using System.Xml.Linq;
 
 Console.WriteLine("Hello, datastructures!");
 
@@ -8,6 +9,8 @@ Console.WriteLine("Hello, datastructures!");
 //int i1 = 102;
 //int i2 = 21;
 //int i3 = 45;
+
+
 
 //int[] myArray = new int[3]; //Fixed size
 
@@ -106,4 +109,38 @@ Console.WriteLine();
 for(int i = 0; i<myFirstList.Count; i++)
 {
     Console.WriteLine($"{i} : {myFirstList[i]}");
+}
+
+
+List<string> names = new List<string>();
+
+names.Add("Peter");
+names.Add("Poul");
+names.Insert(1, "Ole");
+
+//names.Remove("Ole");
+
+//Fjern alle forekomster af navnet Ole
+
+//foreach(string name in names)
+//{
+//    if (name == "Ole")
+//    {
+//        names.Remove(name);
+//    }
+//}
+
+for(int i = 0; i < names.Count; i++)
+{
+    if (names[i] == "Ole")
+    {
+        //names.Remove("Ole");
+        names.RemoveAt(i);
+        i--;
+    }
+}
+Console.WriteLine("Efter fjernelse af Ole");
+foreach(string n in names)
+{
+    Console.WriteLine(n);
 }
