@@ -174,16 +174,67 @@ foreach(Pizza item in pizzas)
     sum = sum + item.Price;
 }
 
-
-
 Console.WriteLine($"Summen af alle pizzaer er {sum}");
 
 
+//Find en pizza som indeholder champingon
 
-Console.WriteLine("Udskrivning af bike");
-Bicycle myBike = new Bicycle("1231df34", "German classic", 7);
+foreach(Pizza pizza in pizzas)
+{
+    if ( pizza.Description.Contains("champingon") )
+    {
+        Console.WriteLine($"Der findes en pizza med champingon som er nummer {pizza.No}");
+    }
 
-Console.WriteLine( myBike.ToString());
+}
+
+
+Pizza? SearchPizza(int no)
+{
+    foreach(Pizza p in pizzas)
+    {
+        if (p.No == no)
+        {
+            return p;
+        }
+    }
+    return null;
+}
+
+Pizza? foundPizza = SearchPizza(2);
+if (foundPizza != null)
+{
+    Console.WriteLine($"fandt pizza med nummer 2 {foundPizza.ToString()}");
+}
+
+List<Pizza> FindAllPizzas(string ingridient)
+{
+    List<Pizza> foundPizzas = new List<Pizza>();
+
+    //Loop og check om en pizza i pizzas indeholder en ingridient
+    foreach(Pizza p in pizzas)
+    {
+        if (p.Description.Contains(ingridient))
+        {
+            foundPizzas.Add(p);
+        }
+    }
+    return foundPizzas;
+}
+
+//Afprøv metoden FindAllPizzas
+List<Pizza> pizzasWithIngridient = FindAllPizzas("Tomat");
+Console.WriteLine("Alle pizzaer med tomat");
+foreach(Pizza piz in pizzasWithIngridient)
+{
+    Console.WriteLine(piz);
+}
+
+
+//Console.WriteLine("Udskrivning af bike");
+//Bicycle myBike = new Bicycle("1231df34", "German classic", 7);
+
+//Console.WriteLine( myBike.ToString());
 
 
 
