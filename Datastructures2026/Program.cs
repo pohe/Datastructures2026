@@ -168,13 +168,26 @@ foreach(Pizza aPizza in pizzas)
 
 //find den samlede pris af alle pizzaer
 
-double sum = 0;  ; 
+double sum = 0;  
 foreach(Pizza item in pizzas)
 {
     sum = sum + item.Price;
 }
 
+
+
 Console.WriteLine($"Summen af alle pizzaer er {sum}");
+
+
+
+Console.WriteLine("Udskrivning af bike");
+Bicycle myBike = new Bicycle("1231df34", "German classic", 7);
+
+Console.WriteLine( myBike.ToString());
+
+
+
+
 
 
 
