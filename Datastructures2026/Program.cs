@@ -231,14 +231,24 @@ foreach(Pizza piz in pizzasWithIngridient)
 }
 
 
-//Console.WriteLine("Udskrivning af bike");
-//Bicycle myBike = new Bicycle("1231df34", "German classic", 7);
+Console.WriteLine("Udskrivning af bike");
+Bicycle myBike = new Bicycle("1f34", "German classic", 7);
+Bicycle myBike2 = new Bicycle("34gh", "CP Hipster", 11);
+Bicycle myBike3 = new Bicycle("34gh", "Centurion", 18);
+Console.WriteLine(myBike.ToString());
 
-//Console.WriteLine( myBike.ToString());
+Dictionary<string, Bicycle> bicycles = new Dictionary<string, Bicycle>();//Key skal være unikt
 
+bicycles.Add("1f34", myBike); //Alternativt kunne skrives bicycles.Add(myBike.SNO, myBike);
 
+bicycles.Add("34gh", myBike2);//Adder en bicycle med givent SNO som key
 
+//bicycles.Add("34gh", myBike3); //Ulovligt at added et objekt med samme key
+bicycles["34gh"] = myBike3; //Overskriver det objekt der var på pladsen med key 34gh
 
+Bicycle foundBike= bicycles["34gh"]; //returnerer bicycle
 
-
-
+if (  !bicycles.ContainsKey("34gh")) //hvis der ikke findes et objekt med denne key
+{
+    bicycles.Add("34gh", myBike3);
+}    
