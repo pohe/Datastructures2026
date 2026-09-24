@@ -251,4 +251,25 @@ Bicycle foundBike= bicycles["34gh"]; //returnerer bicycle
 if (  !bicycles.ContainsKey("34gh")) //hvis der ikke findes et objekt med denne key
 {
     bicycles.Add("34gh", myBike3);
-}    
+}
+Console.WriteLine("Udskrivning af dictionary ");
+//foreach( var  f in bicycles    )
+//{
+//    Console.WriteLine(f.Value);
+//}
+
+foreach(Bicycle b in bicycles.Values)
+{
+    Console.WriteLine(b);
+}
+
+
+if (bicycles.Remove("1f34"))
+{
+    Console.WriteLine("Der er fjernet en bicycle");
+}
+Console.WriteLine("Udskrivning efter remove");
+foreach (Bicycle b in bicycles.Values)
+{
+    Console.WriteLine(b);
+}
