@@ -293,6 +293,12 @@ if (!students.ContainsKey(student2.Mobile))
 if (!students.ContainsKey("3434"))
     students.Add("3434", new Student("Poul", "3434"));
 
+
+Student s4 = new Student("Kurt", "12312312");
+students["12312312"] = s4;
+
+students.Remove(student2.Mobile);
+
 foreach(Student s in students.Values)
 {
     Console.WriteLine(s.ToString());
