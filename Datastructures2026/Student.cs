@@ -20,6 +20,9 @@ namespace Datastructures2026
         public string Mobile { get; set; } //Auto property
 
 
+        private Bicycle? _bicycle;
+
+
         public Student( string name, string mobile) //Konstruktor  -laver og  initialiserer et objekt
         {
 
@@ -28,6 +31,11 @@ namespace Datastructures2026
             Mobile = mobile;
         }
 
+
+        public void SetBicycle(Bicycle bicycle)
+        {
+            _bicycle = bicycle;
+        }
 
         public override string ToString()  //returnerer en streng med objektets værdier /tilstand
         {
