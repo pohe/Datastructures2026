@@ -273,3 +273,29 @@ foreach (Bicycle b in bicycles.Values)
 {
     Console.WriteLine(b);
 }
+
+
+Console.WriteLine("Oprettelse og udskrivning af student");
+Console.WriteLine("Skriv navn");
+string myName = Console.ReadLine();
+Student student1 = new Student(myName, "12312312");
+Console.WriteLine(student1.ToString() );
+
+Student student2 = new Student("Ole", "343434");
+Console.WriteLine(student2.ToString());
+
+Dictionary<string, Student> students = new Dictionary<string, Student>();
+
+if ( !students.ContainsKey("12312312"))
+    students.Add("12312312", student1);
+if (!students.ContainsKey(student2.Mobile))
+    students.Add(student2.Mobile, student2);
+if (!students.ContainsKey("3434"))
+    students.Add("3434", new Student("Poul", "3434"));
+
+foreach(Student s in students.Values)
+{
+    Console.WriteLine(s.ToString());
+}
+
+
