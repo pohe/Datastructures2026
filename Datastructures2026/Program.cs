@@ -304,4 +304,13 @@ foreach(Student s in students.Values)
     Console.WriteLine(s.ToString());
 }
 
+Console.WriteLine("House section");
+House myHouse = new House("Gade 123", 156, HouseType.villa);
+//myHouse.PrintAll();
+House mySummerHouse = new House("Sommervej 123", 50, HouseType.Fritidshus);
+//mySummerHouse.PrintAll();
 
+HouseRepository hRepo = new HouseRepository();
+hRepo.Add(myHouse);
+hRepo.Add(mySummerHouse);
+hRepo.PrintAllHouses();
