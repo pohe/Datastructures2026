@@ -30,6 +30,14 @@ namespace Datastructures2026
             return null; 
         }
 
+        public void DeleteHouse(int id)
+        {
+            House? houseToBeRemoved = SearchHouse(id);
+            if (houseToBeRemoved != null)
+                _houses.Remove(houseToBeRemoved);
+        }
+
+
         public void PrintAllHouses()
         {
             foreach(House h in _houses)

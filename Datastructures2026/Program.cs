@@ -10,6 +10,7 @@ Console.WriteLine("Hello, datastructures!");
 //int i1 = 102;
 //int i2 = 21;
 //int i3 = 45;
+//i3 = i1 + i2; 
 
 
 
@@ -313,4 +314,18 @@ House mySummerHouse = new House("Sommervej 123", 50, HouseType.Fritidshus);
 HouseRepository hRepo = new HouseRepository();
 hRepo.Add(myHouse);
 hRepo.Add(mySummerHouse);
+hRepo.PrintAllHouses();
+
+Console.WriteLine("Søgning efter hus 2");
+House? foundHouse = hRepo.SearchHouse(3);
+if (foundHouse!= null)
+{
+    foundHouse.PrintAll();
+}
+else
+{
+    Console.WriteLine("Huset findes ikke");
+}
+Console.WriteLine("Her fjernes hus med id 1");
+hRepo.DeleteHouse(1);
 hRepo.PrintAllHouses();
