@@ -86,6 +86,7 @@ myFirstList.Add(10);
 myFirstList.Add(15); //Tilføjer bagerst i listen
 myFirstList.Add(27);
 myFirstList.Insert(2, 45);
+//myFirstList[2] = 45;  //overskriver det der ligger på indeks 2
 myFirstList.Remove(15);
 myFirstList.RemoveAt(1);
 myFirstList[1] = 13;
@@ -311,7 +312,8 @@ House myHouse = new House("Gade 123", 156, HouseType.villa);
 House mySummerHouse = new House("Sommervej 123", 50, HouseType.Fritidshus);
 //mySummerHouse.PrintAll();
 
-HouseRepository hRepo = new HouseRepository();
+//HouseRepository hRepo = new HouseRepository();
+HouseRepositoryDictionary hRepo = new HouseRepositoryDictionary();
 hRepo.Add(myHouse);
 hRepo.Add(mySummerHouse);
 hRepo.PrintAllHouses();
@@ -327,5 +329,11 @@ else
     Console.WriteLine("Huset findes ikke");
 }
 Console.WriteLine("Her fjernes hus med id 1");
-hRepo.DeleteHouse(1);
+//hRepo.DeleteHouse(1);
+hRepo.PrintAllHouses();
+
+House mySummerHouse2 = new House("Sommervej 122", 50, HouseType.Fritidshus);
+
+hRepo.UpdateHouse(mySummerHouse.Id, mySummerHouse2);
+Console.WriteLine("Udskrivning efter update");
 hRepo.PrintAllHouses();
