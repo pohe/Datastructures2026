@@ -312,11 +312,18 @@ House myHouse = new House("Gade 123", 156, HouseType.villa);
 House mySummerHouse = new House("Sommervej 123", 50, HouseType.Fritidshus);
 //mySummerHouse.PrintAll();
 
-//HouseRepository hRepo = new HouseRepository();
-HouseRepositoryDictionary hRepo = new HouseRepositoryDictionary();
+HouseRepository hRepo = new HouseRepository();
+//HouseRepositoryDictionary hRepo = new HouseRepositoryDictionary();
 hRepo.Add(myHouse);
 hRepo.Add(mySummerHouse);
+
+House myHouse2 = new House("Gade 123", 156, HouseType.villa);
+hRepo.Add(myHouse2);
+
+
 hRepo.PrintAllHouses();
+
+House foundHouse = hRepo.SearchHouse(1); 
 
 Console.WriteLine("Søgning efter hus 2");
 House? foundHouse = hRepo.SearchHouse(3);
